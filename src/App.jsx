@@ -1,6 +1,7 @@
 import Liste from "./Liste";
 import "./App.css";
 import Formulaire from "./Formulaire";
+import Carte from './Carte'
 import { useState } from "react";
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
       </header>
       <Formulaire liste={liste} setListe={setListe} setData={setData}/>
       <p>{datas?.provider_name}</p>
-      {JSON.stringify(datas)}
+      <Carte provider={datas.provider_name} datas={datas} />
+      {console.log(datas)}
       <Liste liste={liste} />
     </div>
   );
