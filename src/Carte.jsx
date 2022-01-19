@@ -2,11 +2,15 @@ import React from 'react'
 
 const Carte = ({datas,provider}) =>{
 
-    return <div style={{display:'flex',flexDirection:'column'}}>
-        <h3>{`Type de document: ${provider}`}</h3>
-        <img src={datas.thumbnail_url_with_play_button} alt="" width={datas.width} height={datas.height} />
-        {['url','title','author_name',"upload_date",'width','height'].map(element=><span>{`${element}: ${datas[element]}`}</span>)}
+    const vimeoTab =['url','title','author_name',"upload_date"]
+    const flickrTab=['url','title','author_name','width','height']
 
+    return <div style={{display:'flex',flexDirection:'column',margin:'15px',alignItems:'center',width:'500px'}}>
+        <h3>{`Type de document:  ${provider?provider:'pas de document chargé'}`}</h3>
+        {datas?.thumbnail_url?<img src={datas.thumbnail_url} alt="" width={datas.thumbnail_width} height={datas.thumbnail_height} />:"Pas d'image"}
+        <div style={{display:'flex',flexDirection:'column',margin:'15px',alignItems:'flex-start'}}> 
+            {provider==='Vimeo'? vimeoTab.map(element=><span>{`${element}: ${datas[element]}`}</span>):provider==='Flickr'?flickrTab.map(element=><span>{`${element}: ${datas[element]}`}</span>):null}
+        </div>
     </div>
 }
 

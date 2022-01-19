@@ -13,11 +13,11 @@ const App = () => {
         <h1 className="no-margin">Test React Klaxxon</h1>
         <p className="no-margin">Application de gestion de bookmarks</p>
       </header>
-      <Formulaire liste={liste} setListe={setListe} setData={setData}/>
-      <p>{datas?.provider_name}</p>
-      <Carte provider={datas.provider_name} datas={datas} />
-      {console.log(datas)}
-      <Liste liste={liste} />
+      <div style={{display:'flex',flexDirection:'column',alignItems:'center',margin:'15px'}}>
+        <Formulaire liste={liste} setListe={setListe} setData={setData}/>
+        <Carte provider={datas.provider_name} datas={datas} />
+        <Liste liste={liste} setListe={setListe} />
+      </div>
     </div>
   );
 };

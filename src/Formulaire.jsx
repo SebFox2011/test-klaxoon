@@ -23,10 +23,10 @@ const handleSaveUrl =() => {
   };
 
   return (
-    <div>
+    <div style={{display:'flex',flexDirection:'column', margin:'15px'}}>
         {isLoading?'chargement':null}
         {isError?'Une erreur est survenue':null}
-      Formulaire 
+      <h3>Formulaire</h3>  
       <form onSubmit={handleSubmt}>
         <input type="text"  value={text} onChange={e=>setText(e.target.value)}/>
         <input type="submit" value="Envoi" onClick={handleSaveUrl} />
