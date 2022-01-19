@@ -17,6 +17,7 @@ const App = () => {
         <Formulaire liste={liste} setListe={setListe} setData={setData}/>
         <Carte provider={datas.provider_name} datas={datas} />
         <Liste liste={liste} setListe={setListe} />
+        {console.log(datas)}
       </div>
     </div>
   );

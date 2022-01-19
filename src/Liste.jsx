@@ -6,12 +6,13 @@ const Liste = ({liste,setListe}) => {
         setListe([liste.filter(e=>e!==element)])
     }
 
-    return <div>
-        <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+    return <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
         <h3> Liste des bookmarks ajoutés</h3>
-        {liste?.length>0 && liste.map(element=><div style={{display:'flex',flexDirection:'row',justifyItems:"space-around"}}><span key={element}>{element}</span><input type="button" value={"supprimer"} onClick={()=>handleDelete(element)}/></div>)}
+        <div style={{display:'flex',flexDirection:'column',justifyItems:"space-between",alignItems:'flex-start',flexWrap:'wrap'}}>
+        {liste?.length>0 && liste.map(element=><><span key={element}>{element}</span><input type="button" value={"supprimer"} onClick={()=>handleDelete(element)}/></>)}
         </div>
-    </div>
+        </div>
+    
 }
 
 export default Liste
